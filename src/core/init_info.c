@@ -3,8 +3,9 @@
 #include <unistd.h>
 #include <sys/utsname.h>
 #include <sys/ioctl.h>
-#include "../../include/core_ui.h"
-#include "../../include/init_info.h"
+#include "core_ui.h"
+#include "core_input.h"
+#include "init_info.h"
 
 void print_logo_from_file() {
     FILE *fp = fopen("assets/welcome.txt", "r");
@@ -37,7 +38,9 @@ int show_welcome_message() {
     draw_line(width);
     draw_content(width, "Author", "ArBin");
     draw_content(width, "Version", "0.1.0");
-    draw_content(width, "Release Info", "This is first release, and now only support Sudoku game.");
+    draw_line(width);
+    draw_content(width, "Release Info", "This is first release");
+    draw_content(width, "", "now only support Sudoku game.");
     draw_line(width);
     draw_content(width, "[Arrow Keys]", "Move Cursor");
     draw_content(width, "[1-9]", "       Input Number");
@@ -46,6 +49,8 @@ int show_welcome_message() {
     draw_line(width);
     
     printf("\nPress any key to start...\n");
-    getchar();
+    enableRawMode();
+    readKey();
+    disableRawMode();
     return 0;
 }

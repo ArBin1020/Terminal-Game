@@ -1,5 +1,5 @@
-#include "../include/init_info.h"
-#include "../include/game_sudoku.h"
+#include "init_info.h"
+#include "game_sudoku.h"
 
 int main() {
     show_welcome_message();

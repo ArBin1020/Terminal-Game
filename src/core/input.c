@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <termios.h>
-#include "../../include/common.h"
-#include "../../include/core_input.h"
+#include "common.h"
+#include "core_input.h"
 
 static struct termios orig_termios;
 

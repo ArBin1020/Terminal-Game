@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdbool.h>
-#include "../../include/common.h"
-#include "../../include/core_input.h"
-#include "../../include/core_ui.h"
-#include "../../include/game_sudoku.h"
+#include "common.h"
+#include "core_input.h"
+#include "core_ui.h"
+#include "game_sudoku.h"
 
 static int grid[9][9];
 static int original[9][9];

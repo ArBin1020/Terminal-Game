@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "../../include/core_ui.h"
+#include "core_ui.h"
 
 void clear_screen() {
     printf("\033[H\033[2J");
@@ -16,7 +16,11 @@ void draw_content(int width, const char *label, const char *text) {
     int used = strlen(label) + 2 + strlen(text);
     int space = width - 2 - used;
     if(space < 0) space = 0;
-    printf("|%s: %s", label, text);
+    if (strcmp(label, "") == 0) {
+        printf("|%s", text);
+    } else {
+        printf("|%s: %s", label, text);
+    }
     for (int i = 0; i < space; i++) printf(" ");
     printf("|\n");
 }
